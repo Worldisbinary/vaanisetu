@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vaanisetu"
+version = "0.1.0"
+description = "Offline voice communication core: tiny packets, compact Indic text codec, low-bandwidth transports"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Team LITE, BITS Pilani" }]
+dependencies = []
+
+[project.optional-dependencies]
+vosk = ["vosk"]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+vaanisetu = "vaanisetu.cli:main"
+
+[tool.setuptools]
+packages = ["vaanisetu"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
